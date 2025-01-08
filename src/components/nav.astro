@@ -1,0 +1,161 @@
+---
+
+---
+
+<nav>
+  <div class="title">
+    <img src="/public/img/logo.jpg" alt="logo" class="logo" />
+    <h1>Gustavo Diaz</h1>
+  </div>
+  <button class="menu-button" onclick="toggleMenu()">
+    <svg
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+      class="size-6"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M3.75 6.75h16.5M3.75 12h16.5M12 17.25h8.25"></path>
+    </svg>
+  </button>
+  <ul class="pages">
+    <a href=""><li>Inicio</li></a>
+    <a href=""><li>Sobre mi</li></a>
+    <a href=""><li>Servicios</li></a>
+    <a href=""><li>Coach empresarial</li></a>
+    <a href=""><li>Contacto</li></a>
+  </ul>
+</nav>
+
+<script is:raw>
+  function toggleMenu() {
+    const menu = document.querySelector(".pages");
+    if (menu) {
+      menu.classList.toggle("show");
+    }
+  }
+</script>
+
+<style>
+  .menu-button {
+    display: none;
+    width: 35px;
+    height: 35px;
+    border: 2px solid #8e8e8e;
+    color: #8e8e8e;
+    border-radius: 5px;
+    background-color: white;
+    padding: 3px;
+    cursor: pointer;
+  }
+
+  .menu-button:hover {
+    background-color: #8e8e8e;
+    color: white;
+  }
+
+  nav {
+    width: 100%;
+    height: 80px;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1000;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 0px 1px 4px #eaeaea;
+  }
+
+  .title {
+    display: flex;
+    width: 30%;
+    max-width: 500px;
+    color: #060270;
+    font-size: 18px;
+    align-items: center;
+    gap: 15px;
+    box-sizing: border-box;
+    padding: 0px 5px 0px 5px;
+  }
+
+  .logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    border: 2px solid #eaeaea;
+  }
+
+  .pages {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    justify-content: space-around;
+    width: 60%;
+    max-width: 1700px;
+    height: 100%;
+  }
+
+  a {
+    text-decoration: none;
+    display: block;
+    color: #3e979a;
+    font-size: 18px;
+    font-weight: 900;
+    padding: 20px;
+    border-radius: 10px;
+    transition: background, scale 300ms linear;
+  }
+
+  a:hover{
+    background: #eaeaea;
+    scale: 1.05;
+  }
+
+  @media (width < 1000){
+    .pages{
+        width: 70%;
+    }
+  }
+
+  @media (width < 850px) {
+    nav{
+        justify-content: center;
+    }
+    .title{
+        width: auto;
+        padding: 0;
+    }
+    .pages {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      gap: 6px;
+      right: 0;
+      width: 100%;
+      height: auto;
+      background: #f6f6f6;
+    }
+
+    .menu-button{
+        display: block;
+        position: absolute;
+        right: 0;
+        margin-right: 10px;
+    }
+
+    a{
+        padding: 10px;
+    }
+
+    .pages.show {
+      display: flex;
+      padding: 5px;
+    }
+  }
+</style>
