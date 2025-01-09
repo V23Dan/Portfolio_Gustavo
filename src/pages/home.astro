@@ -1,0 +1,309 @@
+<section>
+  <aside>
+    <img src="/public/img/logo.jpg" alt="logo" class="logo" />
+    <h1 class="title">GUSTAVO DIAZ</h1>
+  </aside>
+  <main class="content">
+    <div class="particle" style="top: 10%; left: 20%; animation-delay: 0s;">
+    </div>
+    <div class="particle" style="top: 30%; left: 40%; animation-delay: 2s;">
+    </div>
+    <div class="particle" style="top: 50%; left: 60%; animation-delay: 4s;">
+    </div>
+    <div class="particle" style="top: 30%; left: 40%; animation-delay: 2s;">
+    </div>
+    <div class="particle" style="top: 50%; left: 60%; animation-delay: 4s;">
+    </div>
+    <div class="particle" style="top: 70%; left: 80%; animation-delay: 6s;">
+    </div>
+    <div class="particle" style="top: 20%; left: 70%; animation-delay: 1s;">
+    </div>
+    <div class="particle" style="top: 70%; left: 80%; animation-delay: 6s;">
+    </div>
+    <div class="particle" style="top: 20%; left: 70%; animation-delay: 1s;">
+    </div>
+    <div class="particle" style="top: 80%; left: 30%; animation-delay: 3s;">
+    </div>
+
+    <div class="text">
+      <div>
+        <p class="width: 100%">Entrenador Comercial & Coach Empresarial</p>
+        <h2 class="width: 100%">
+          Impulsa tu negocio. Transforma tu equipo. Logra resultados
+          extraordinarios
+        </h2>
+      </div>
+
+      <button class="redes">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1536 1504"
+          ><path
+            fill="currentColor"
+            d="M349 497v991H19V497zm21-306q1 73-50.5 122T184 362h-2q-82 0-132-49T0 191q0-74 51.5-122.5T186 20t133 48.5T370 191m1166 729v568h-329V958q0-105-40.5-164.5T1040 734q-63 0-105.5 34.5T871 854q-11 30-11 81v553H531q2-399 2-647t-1-296l-1-48h329v144h-2q20-32 41-56t56.5-52t87-43.5T1157 474q171 0 275 113.5T1536 920"
+          ></path></svg
+        >
+      </button>
+    </div>
+  </main>
+</section>
+
+<style>
+  section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 2200px;
+    gap: 40px;
+    height: 100vh;
+  }
+
+  .redes {
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    border: 2px solid #060270;
+    border-radius: 5px;
+    background: white;
+    color: #060270;
+    position: absolute;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    bottom: 0;
+    right: 0;
+  }
+
+  .redes:hover {
+    background: #060270;
+    color: white;
+    cursor: pointer;
+    transition: all 250ms ease-in-out;
+  }
+
+  aside {
+    display: flex;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    flex-wrap: wrap;
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+    width: 300px;
+    height: 350px;
+  }
+
+  @property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+  }
+
+  aside::after,
+  aside::before {
+    content: "";
+    position: absolute;
+    background-image: conic-gradient(
+      from var(--angle),
+      #3e7a9a,
+      #7901d4,
+      #060270
+    );
+    width: 300px;
+    z-index: -1;
+    padding: 23px;
+    border-radius: 10px;
+    translate: 0px -23px;
+    height: 350px;
+    animation: 3s spin linear infinite;
+  }
+
+  aside::before {
+    filter: blur(1.5rem);
+    opacity: 0.4;
+  }
+
+  @keyframes spin {
+    from {
+      --angle: 0deg;
+    }
+    to {
+      --angle: 360deg;
+    }
+  }
+
+  .content {
+    display: block;
+    align-content: center;
+    justify-content: center;
+    width: 40%;
+    overflow: hidden;
+    background: #ffff;
+    height: 100%;
+    position: relative;
+  }
+
+  .text {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    border-radius: 10px;
+    padding: 20px 30px;
+    background: rgba(187, 186, 186, 0.056); /* Fondo semitransparente */
+    border-radius: 12px;
+    backdrop-filter: blur(10px); /* Efecto de desenfoque */
+    color: #000;
+    height: 350px;
+    font-size: 18px;
+  }
+
+  .particle {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: #3e7a9a;
+    border-radius: 50%;
+    animation: moveParticle 8s linear infinite;
+  }
+
+  @keyframes moveParticle {
+    0% {
+      transform: translate(-10vw, -10vh);
+    }
+    100% {
+      transform: translate(110vw, 110vh);
+    }
+  }
+  .logo {
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+  }
+
+  .title {
+    width: 100%;
+    color: #060270;
+    font-size: 42px;
+  }
+
+  p {
+    font-size: 22px;
+    font-weight: 700;
+    color: #3e7a9a;
+  }
+
+  h2 {
+    color: #7901d4;
+    font-size: 32px;
+  }
+
+  @media (width < 1000px) {
+    aside {
+      width: 250px;
+      height: 300px;
+    }
+
+    aside::after,
+    aside::before {
+      width: 250px;
+      height: 300px;
+    }
+
+    .text {
+      width: 250px;
+      height: 300px;
+    }
+
+    .logo {
+      width: 150px;
+      height: 150px;
+      border-radius: 100%;
+    }
+
+    .title {
+      font-size: 32px;
+    }
+
+    p {
+      font-size: 20px;
+    }
+
+    h2 {
+      font-size: 24px;
+    }
+  }
+
+  @media (width < 800px) {
+    section {
+      width: 100%;
+      align-content: center;
+      flex-wrap: wrap;
+      gap: 0;
+    }
+
+    aside {
+      display: flex;
+      align-content: center;
+      justify-content: center;
+      gap: 5px;
+      width: 80%;
+      height: 100px;
+      margin-bottom: 50px;
+      margin-top: 100px;
+    }
+
+    aside::after,
+    aside::before {
+      width: 80%;
+      height: 100px;
+    }
+
+    .content {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      height: auto;
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+
+    .text {
+      width: 80%;
+      height: auto;
+      padding: 10px 30px;
+    }
+
+    .title {
+      width: 60%;
+    }
+
+    .logo {
+      width: 100px;
+      height: 100px;
+    }
+
+    p {
+      font-size: 18px;
+    }
+
+    h2 {
+      font-size: 20px;
+    }
+
+    .redes {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  @media (width < 600px) {
+    .logo {
+      width: 70px;
+      height: 70px;
+      align-self: center;
+    }
+
+    .title {
+      width: 50%;
+      font-size: 26px;
+    }
+  }
+</style>
