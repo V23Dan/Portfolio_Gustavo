@@ -1,0 +1,241 @@
+<section class="services-container">
+  <h2 class="services-title">Servicios</h2>
+
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-content">
+        <h3 class="service-title">Entrenamiento Comercial</h3>
+        <p class="service-description">
+          Potencia las habilidades de tu equipo comercial con estrategias
+          probadas y técnicas de venta efectivas.
+        </p>
+        <div class="service-icon-1"></div>
+        <div class="service-details">
+          <ul>
+            <li>Cursos avanzados en ventas</li>
+            <li>Uso de mejores practicas</li>
+          </ul>
+        </div>
+        <a href="/sub-services/entrenamientoComercial" class="learn-more">
+          Descubre más
+          <span>→</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-content">
+        <h3 class="service-title">Coach Empresarial</h3>
+        <p class="service-description">
+          Transforma tu organización con programas de coaching diseñados para
+          potenciar el liderazgo y rendimiento.
+        </p>
+        <div class="service-icon-2"></div>
+        <div class="service-details">
+          <ul>
+            <li>Diagnóstico</li>
+            <li>Desarrollo de equipo</li>
+            <li>Cultura organizacional</li>
+            <li>Ser, hacer y saber</li>
+          </ul>
+        </div>
+        <a href="#" class="learn-more">
+          Descubre más
+          <span>→</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-content">
+        <h3 class="service-title">Sesiones Personalizadas</h3>
+        <p class="service-description">
+          Coaching individual adaptado a tus necesidades específicas para
+          alcanzar tus metas profesionales.
+        </p>
+        <div class="service-icon-3"></div>
+        <div class="service-details">
+          <ul>
+            <li>Sesiones individuales</li>
+            <li>Sesiones grupales</li>
+            <li>Seguimiento personalizado</li>
+            <li>Evaluación de progreso</li>
+          </ul>
+        </div>
+        <a href="#" class="learn-more">
+          Descubre más
+          <span>→</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .services-container {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 2rem;
+  }
+
+  .services-title {
+    text-align: center;
+    color: #060270;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    position: relative;
+  }
+
+  .services-title::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, #3e7a9a, #7901d4);
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+  }
+
+  .service-card {
+    position: relative;
+    display: flex;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    min-height: 400px;
+    cursor: pointer;
+    border: 1px solid rgba(62, 122, 154, 0.1);
+  }
+
+  .service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(4, 1, 80, 0.364);
+    .service-icon-1,
+    .service-icon-2,
+    .service-icon-3 {
+      display: none;
+    }
+  }
+
+  .service-content {
+    padding: 2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .service-icon-1,
+  .service-icon-2,
+  .service-icon-3 {
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+    justify-self: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .service-icon-1 {
+    background-image: url(/public/img/EntrenamientoComercial.jpg);
+  }
+
+  .service-icon-2 {
+    background-image: url(/public/img/coachEmpresarial.webp);
+  }
+
+  .service-icon-3 {
+    background-image: url(/public/img/sesionPersonalizada.png);
+  }
+
+  .service-title {
+    color: #060270;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+
+  .service-description {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    transition: opacity 0.3s ease;
+  }
+
+  .service-details {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    color: #3e7a9a;
+  }
+
+  .service-card:hover .service-details {
+    max-height: 200px;
+    opacity: 1;
+    margin-top: 1rem;
+  }
+
+  .service-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .service-card:hover::before {
+    opacity: 1;
+  }
+
+  .learn-more {
+    color: #7901d4;
+    background: #ebd9f8;
+    padding: 5px;
+    border-radius: 3px;
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+  }
+
+  .learn-more:hover {
+    color: #ebd9f8;
+    background: #7901d4;
+  }
+
+  .service-card:hover .learn-more {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (max-width: 768px) {
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .service-card {
+      min-height: 350px;
+    }
+  }
+</style>
