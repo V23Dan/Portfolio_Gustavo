@@ -1,75 +1,106 @@
+---
+import Modal from "./sub-services/entrenamientoComercial.astro";
+import ModalCoach from "./sub-services/coachEmpresarial.astro";
+---
+
 <section class="services-container">
   <h2 class="services-title">Servicios</h2>
 
   <div class="services-grid">
-    <div class="service-card">
-      <div class="service-content">
-        <h3 class="service-title">Entrenamiento Comercial</h3>
-        <p class="service-description">
-          Potencia las habilidades de tu equipo comercial con estrategias
-          probadas y técnicas de venta efectivas.
-        </p>
-        <div class="service-icon-1"></div>
-        <div class="service-details">
-          <ul>
-            <li>Cursos avanzados en ventas</li>
-            <li>Uso de mejores practicas</li>
-          </ul>
+    <Modal isVisible={false} />
+    <div class="service-wrapper">
+      <div class="service-card">
+        <div class="service-content">
+          <h3 class="service-title">Entrenamiento Comercial</h3>
+          <p class="service-description">
+            Potencia las habilidades de tu equipo comercial con estrategias
+            probadas y técnicas de venta efectivas.
+          </p>
+          <div class="service-icon-1"></div>
+          <div class="service-details">
+            <ul>
+              <li>Cursos avanzados en ventas</li>
+              <li>Uso de mejores practicas</li>
+            </ul>
+          </div>
+          <button class="learn-more" id="open-modal">
+            Descubre más
+            <span>→</span>
+          </button>
         </div>
-        <a href="/sub-services/entrenamientoComercial" class="learn-more">
-          Descubre más
-          <span>→</span>
-        </a>
+      </div>
+    </div>
+    
+    <div class="service-wrapper">
+      <div class="service-card">
+        <div class="service-content">
+          <h3 class="service-title">Coach Empresarial</h3>
+          <p class="service-description">
+            Transforma tu organización con programas de coaching diseñados para
+            potenciar el liderazgo y rendimiento.
+          </p>
+          <div class="service-icon-2"></div>
+          <div class="service-details">
+            <ul>
+              <li>Diagnóstico</li>
+              <li>Desarrollo de equipo</li>
+              <li>Cultura organizacional</li>
+              <li>Ser, hacer y saber</li>
+            </ul>
+          </div>
+          <button id="open-modal-2" class="learn-more">
+            Descubre más
+            <span>→</span>
+          </button>
+        </div>
       </div>
     </div>
 
-    <div class="service-card">
-      <div class="service-content">
-        <h3 class="service-title">Coach Empresarial</h3>
-        <p class="service-description">
-          Transforma tu organización con programas de coaching diseñados para
-          potenciar el liderazgo y rendimiento.
-        </p>
-        <div class="service-icon-2"></div>
-        <div class="service-details">
-          <ul>
-            <li>Diagnóstico</li>
-            <li>Desarrollo de equipo</li>
-            <li>Cultura organizacional</li>
-            <li>Ser, hacer y saber</li>
-          </ul>
+    <div class="service-wrapper">
+      <div class="service-card">
+        <div class="service-content">
+          <h3 class="service-title">Sesiones Personalizadas</h3>
+          <p class="service-description">
+            Coaching individual adaptado a tus necesidades específicas para
+            alcanzar tus metas profesionales.
+          </p>
+          <div class="service-icon-3"></div>
+          <div class="service-details">
+            <ul>
+              <li>Sesiones individuales</li>
+              <li>Sesiones grupales</li>
+              <li>Seguimiento personalizado</li>
+              <li>Evaluación de progreso</li>
+            </ul>
+          </div>
+          <button class="learn-more">
+            Descubre más
+            <span>→</span>
+          </button>
         </div>
-        <a href="#" class="learn-more">
-          Descubre más
-          <span>→</span>
-        </a>
-      </div>
-    </div>
-
-    <div class="service-card">
-      <div class="service-content">
-        <h3 class="service-title">Sesiones Personalizadas</h3>
-        <p class="service-description">
-          Coaching individual adaptado a tus necesidades específicas para
-          alcanzar tus metas profesionales.
-        </p>
-        <div class="service-icon-3"></div>
-        <div class="service-details">
-          <ul>
-            <li>Sesiones individuales</li>
-            <li>Sesiones grupales</li>
-            <li>Seguimiento personalizado</li>
-            <li>Evaluación de progreso</li>
-          </ul>
-        </div>
-        <a href="#" class="learn-more">
-          Descubre más
-          <span>→</span>
-        </a>
       </div>
     </div>
   </div>
 </section>
+
+<script is:raw>
+  // Seleccionar elementos del DOM
+  const modal = document.querySelector(".modal-overlay");
+  const openButton = document.getElementById("open-modal");
+  const closeButton = document.getElementById("close-modal");
+
+  // Mostrar modal
+  openButton.addEventListener("click", () => {
+    modal.classList.add("block");
+    modal.classList.remove("hidden");
+  });
+
+  // Ocultar modal
+  closeButton.addEventListener("click", () => {
+    modal.classList.add("hidden");
+    modal.classList.remove("block");
+  });
+</script>
 
 <style>
   .services-container {
@@ -104,6 +135,12 @@
     padding: 1rem;
   }
 
+  .service-wrapper {
+    padding: 10px;
+    padding-bottom: 30px;
+    margin-bottom: -20px;
+  }
+
   .service-card {
     position: relative;
     display: flex;
@@ -113,23 +150,29 @@
     transition: all 0.3s ease;
     min-height: 400px;
     cursor: pointer;
+    z-index: 1;
     border: 1px solid rgba(62, 122, 154, 0.1);
   }
 
-  .service-card:hover {
+  .service-wrapper:hover .service-card {
     transform: translateY(-10px);
     box-shadow: 0 20px 40px rgba(4, 1, 80, 0.364);
-    .service-icon-1,
-    .service-icon-2,
-    .service-icon-3 {
-      display: none;
-    }
+  }
+
+  .service-wrapper:hover .service-icon-1,
+  .service-wrapper:hover .service-icon-2,
+  .service-wrapper:hover .service-icon-3 {
+    opacity: 0;
+    transform: scale(0.95);
+    height: 0;
+    margin: 0;
   }
 
   .service-content {
     padding: 2rem;
     position: relative;
     z-index: 1;
+    width: 100%;
   }
 
   .service-icon-1,
@@ -138,14 +181,14 @@
     width: 150px;
     height: 150px;
     border-radius: 100%;
-
     background-size: cover;
     display: flex;
     align-items: center;
-    position: relative;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     justify-content: center;
-    justify-self: center;
-    margin-bottom: 1.5rem;
+    margin: 0;
   }
 
   .service-icon-1 {
@@ -172,6 +215,7 @@
     line-height: 1.6;
     margin-bottom: 1.5rem;
     transition: opacity 0.3s ease;
+    margin: 0;
   }
 
   .service-details {
@@ -180,32 +224,19 @@
     overflow: hidden;
     transition: all 0.3s ease;
     color: #3e7a9a;
+    margin: 0;
   }
 
-  .service-card:hover .service-details {
+  .service-wrapper:hover .service-details {
     max-height: 200px;
     opacity: 1;
     margin-top: 1rem;
   }
 
-  .service-card::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-
-  .service-card:hover::before {
-    opacity: 1;
-  }
-
   .learn-more {
+    cursor: pointer;
     color: #7901d4;
+    border: none;
     background: #ebd9f8;
     padding: 5px;
     border-radius: 3px;
@@ -224,7 +255,7 @@
     background: #7901d4;
   }
 
-  .service-card:hover .learn-more {
+  .service-wrapper:hover .learn-more {
     opacity: 1;
     transform: translateY(0);
   }
