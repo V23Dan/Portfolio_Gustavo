@@ -1,5 +1,6 @@
 ---
-import Nav from "../components/nav.astro"
+import Nav from "../components/nav.astro";
+import Footer from "../components/footer.astro";
 ---
 
 <!doctype html>
@@ -12,8 +13,9 @@ import Nav from "../components/nav.astro"
     <title>Gustavo Diaz</title>
   </head>
   <body>
+    <Nav />
     <slot />
-    <Nav></Nav>
+    <Footer />
   </body>
 </html>
 
@@ -23,5 +25,13 @@ import Nav from "../components/nav.astro"
       sans-serif;
     margin: 0;
     padding: 0;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  @media (prefers-reduce-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
   }
 </style>
