@@ -1,92 +1,21 @@
 ---
 import Modal from "./sub-services/entrenamientoComercial.astro";
-import ModalCoach from "./sub-services/coachEmpresarial.astro";
+import Modals from "../components/modal.astro";
 ---
 
 <section class="services-container">
   <h2 class="services-title">Servicios</h2>
+  <Modal isVisible={false} />
 
-  <div class="services-grid">
-    <Modal isVisible={false} />
-    <div class="service-wrapper">
-      <div class="service-card">
-        <div class="service-content">
-          <h3 class="service-title">Entrenamiento Comercial</h3>
-          <p class="service-description">
-            Potencia las habilidades de tu equipo comercial con estrategias
-            probadas y técnicas de venta efectivas.
-          </p>
-          <div class="service-icon-1"></div>
-          <div class="service-details">
-            <ul>
-              <li>Cursos avanzados en ventas</li>
-              <li>Uso de mejores practicas</li>
-            </ul>
-          </div>
-          <button class="learn-more" id="open-modal">
-            Descubre más
-            <span>→</span>
-          </button>
-        </div>
-      </div>
-    </div>
-    
-    <div class="service-wrapper">
-      <div class="service-card">
-        <div class="service-content">
-          <h3 class="service-title">Coach Empresarial</h3>
-          <p class="service-description">
-            Transforma tu organización con programas de coaching diseñados para
-            potenciar el liderazgo y rendimiento.
-          </p>
-          <div class="service-icon-2"></div>
-          <div class="service-details">
-            <ul>
-              <li>Diagnóstico</li>
-              <li>Desarrollo de equipo</li>
-              <li>Cultura organizacional</li>
-              <li>Ser, hacer y saber</li>
-            </ul>
-          </div>
-          <button id="open-modal-2" class="learn-more">
-            Descubre más
-            <span>→</span>
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <div class="service-wrapper">
-      <div class="service-card">
-        <div class="service-content">
-          <h3 class="service-title">Sesiones Personalizadas</h3>
-          <p class="service-description">
-            Coaching individual adaptado a tus necesidades específicas para
-            alcanzar tus metas profesionales.
-          </p>
-          <div class="service-icon-3"></div>
-          <div class="service-details">
-            <ul>
-              <li>Sesiones individuales</li>
-              <li>Sesiones grupales</li>
-              <li>Seguimiento personalizado</li>
-              <li>Evaluación de progreso</li>
-            </ul>
-          </div>
-          <button class="learn-more">
-            Descubre más
-            <span>→</span>
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
+  <Modals client:load />
 </section>
 
 <script is:raw>
   // Seleccionar elementos del DOM
   const modal = document.querySelector(".modal-overlay");
+
   const openButton = document.getElementById("open-modal");
+
   const closeButton = document.getElementById("close-modal");
 
   // Mostrar modal
@@ -126,147 +55,5 @@ import ModalCoach from "./sub-services/coachEmpresarial.astro";
     width: 100px;
     height: 3px;
     background: linear-gradient(90deg, #3e7a9a, #7901d4);
-  }
-
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    padding: 1rem;
-  }
-
-  .service-wrapper {
-    padding: 10px;
-    padding-bottom: 30px;
-    margin-bottom: -20px;
-  }
-
-  .service-card {
-    position: relative;
-    display: flex;
-    background: white;
-    border-radius: 15px;
-    overflow: hidden;
-    transition: all 0.3s ease;
-    min-height: 400px;
-    cursor: pointer;
-    z-index: 1;
-    border: 1px solid rgba(62, 122, 154, 0.1);
-  }
-
-  .service-wrapper:hover .service-card {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(4, 1, 80, 0.364);
-  }
-
-  .service-wrapper:hover .service-icon-1,
-  .service-wrapper:hover .service-icon-2,
-  .service-wrapper:hover .service-icon-3 {
-    opacity: 0;
-    transform: scale(0.95);
-    height: 0;
-    margin: 0;
-  }
-
-  .service-content {
-    padding: 2rem;
-    position: relative;
-    z-index: 1;
-    width: 100%;
-  }
-
-  .service-icon-1,
-  .service-icon-2,
-  .service-icon-3 {
-    width: 150px;
-    height: 150px;
-    border-radius: 100%;
-    background-size: cover;
-    display: flex;
-    align-items: center;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    justify-content: center;
-    margin: 0;
-  }
-
-  .service-icon-1 {
-    background-image: url(/public/img/EntrenamientoComercial.jpg);
-  }
-
-  .service-icon-2 {
-    background-image: url(/public/img/coachEmpresarial.webp);
-  }
-
-  .service-icon-3 {
-    background-image: url(/public/img/sesionPersonalizada.png);
-  }
-
-  .service-title {
-    color: #060270;
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    font-weight: 600;
-  }
-
-  .service-description {
-    color: #666;
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
-    transition: opacity 0.3s ease;
-    margin: 0;
-  }
-
-  .service-details {
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
-    transition: all 0.3s ease;
-    color: #3e7a9a;
-    margin: 0;
-  }
-
-  .service-wrapper:hover .service-details {
-    max-height: 200px;
-    opacity: 1;
-    margin-top: 1rem;
-  }
-
-  .learn-more {
-    cursor: pointer;
-    color: #7901d4;
-    border: none;
-    background: #ebd9f8;
-    padding: 5px;
-    border-radius: 3px;
-    text-decoration: none;
-    font-weight: 500;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    opacity: 0;
-    transform: translateY(10px);
-    transition: all 0.3s ease;
-  }
-
-  .learn-more:hover {
-    color: #ebd9f8;
-    background: #7901d4;
-  }
-
-  .service-wrapper:hover .learn-more {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  @media (max-width: 768px) {
-    .services-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .service-card {
-      min-height: 350px;
-    }
   }
 </style>

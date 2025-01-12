@@ -1,0 +1,144 @@
+---
+// Footer.astro
+---
+
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-sections">
+      <div class="contact-info">
+        <h3>Contacto Directo</h3>
+        <p>
+          <i class="phone-icon">📱</i>
+          <a href="tel:+573135708927">313 570 8927</a>
+        </p>
+        <p>
+          <i class="email-icon">✉️</i>
+          <a href="mailto:coach@gustavodiaz.pro">coach@gustavodiaz.pro</a>
+        </p>
+      </div>
+
+      <div class="business-info">
+        <h3>Gustavo Diaz</h3>
+        <p>Entrenador Comercial & Coach Empresarial</p>
+        <p class="slogan">El cambio que necesitas comienza hoy</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 Gustavo Diaz.</p>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: linear-gradient(to right, #001845, #012d75);
+    color: white;
+    padding: 3rem 0 1rem 0;
+    margin-top: 4rem;
+    height: 50vh;
+  }
+
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .footer-sections {
+    flex: 1 1 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4rem;
+    justify-content: space-around;
+  }
+
+  .contact-info,
+  .business-info {
+    flex: 1 1 250px;
+    font-size: 20px;
+  }
+
+  .contact-info h3,
+  .business-info h3 {
+    color: #00a3ff;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+  }
+
+  .contact-info p,
+  .business-info p {
+    margin: 0.5rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .contact-info a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .contact-info a:hover {
+    color: #00a3ff;
+  }
+
+  .slogan {
+    font-style: italic;
+    color: #00a3ff;
+    margin-top: 1rem;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    margin-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .footer-bottom p {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  @media (max-width: 768px) {
+    .footer-content {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .footer-sections {
+      gap: 2rem;
+    }
+
+    .contact-info p {
+      justify-content: center;
+    }
+  }
+
+  @media (width < 600px) {
+    .footer-content {
+      text-align: center;
+    }
+
+    .contact-info,
+    .business-info {
+      font-size: 12px;
+      text-align: center;
+    }
+
+    .contact-info h3,
+    .business-info h3 {
+      color: #00a3ff;
+      margin-bottom: 1rem;
+      font-size: 1.25rem;
+    }
+  }
+</style>
