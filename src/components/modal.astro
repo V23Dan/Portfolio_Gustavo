@@ -150,19 +150,18 @@
         </header>
         <section class="sesiones-grid">
           <div class="sesion-cuadro">Marca personal</div>
-          <div class="sesion-cuadro">Trabajo en equipo</div>
-          <div class="sesion-cuadro">Comunicación asertiva</div>
-          <div class="sesion-cuadro">Finanzas personales</div>
-          <div class="sesion-cuadro">MARKETING</div>
-          <div class="sesion-cuadro">Gestión del cambio</div>
-          <div class="sesion-cuadro">Servicio al cliente</div>
-          <div class="sesion-cuadro">Gestión del tiempo</div>
+          <div class="sesion-cuadro" id="verde-1">Trabajo en equipo</div>
+          <div class="sesion-cuadro" id="lila-1">Comunicación asertiva</div>
+          <div class="sesion-cuadro" id="verde-2">Finanzas personales</div>
+          <div class="sesion-cuadro" id="lila-2">MARKETING</div>
+          <div class="sesion-cuadro" id="morado-1">Gestión del cambio</div>
+          <div class="sesion-cuadro" id="lila-3">Servicio al cliente</div>
+          <div class="sesion-cuadro" id="morado-2">Gestión del tiempo</div>
           <div class="sesion-cuadro">Dirección</div>
-          <div class="sesion-cuadro">Formador de formadores</div>
+          <div class="sesion-cuadro" id="morado-3">Formador de formadores</div>
           <div class="sesion-cuadro">Hábitos de salud mental</div>
         </section>
         <section class="section-formador">
-          <div class="img-formador"></div>
           <div class="description-formador">
             <h3 class="title-formador">Formador de formadores</h3>
             <ul>
@@ -181,8 +180,8 @@
             <h4 title="servicecliente">Servicio al cliente</h4>
           </div>
 
-          <div>
-            <ul>
+          <div class="description-servicio-cliente">
+            <ul class="modulos-service">
               <li>Módulo 1: Fundamentos del Servicio al Cliente Interno</li>
               <li>Módulo 2: Cultura Organizacional de Servicio</li>
               <li>Módulo 3: Comunicación Efectiva</li>
@@ -260,51 +259,131 @@
     max-height: calc(90vh - 4rem);
   }
 
-  .title-formador {
-    width: 100%;
+  #verde-1,
+  #verde-2 {
+    background: #00a09d;
+  }
+
+  #lila-1,
+  #lila-2,
+  #lila-3 {
+    background: #6a7fdf;
+  }
+
+  #morado-1,
+  #morado-2,
+  #morado-3 {
+    background: #5e5ca2;
   }
 
   .section-formador {
     width: 45%;
-    padding: 10px;
+    padding: 2rem;
     display: flex;
+    gap: 10px;
     align-items: center;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    background: rgba(62, 122, 154, 0.1);
+
+    background: linear-gradient(
+      145deg,
+      rgba(62, 122, 154, 0.05) 0%,
+      rgba(62, 122, 154, 0.1) 100%
+    );
     border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(62, 122, 154, 0.08);
+  }
+
+  .title-formador {
+    width: 100%;
+    color: #2d3748;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+  }
+
+  .title-formador::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: #3e7a9a;
+    border-radius: 2px;
   }
 
   .description-formador {
-    width: 50%;
-    height: 100%;
-    padding: 5px;
-    font-size: 18px;
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.1rem;
     color: #3e7a9a;
   }
 
-  .img-formador {
-    width: 230px;
-    height: 230px;
-    border-radius: 15px;
-    background-image: url(/public/img/formador.jpg);
-    background-size: cover;
+  .description-formador ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .description-formador li {
+    padding-left: 1.8rem;
+    position: relative;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+    display: flex;
+    align-items: center;
+  }
+
+  .description-formador li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #3e7a9a;
+    font-weight: bold;
+    font-size: 1rem;
   }
 
   .imgServicioCliente {
     width: 100%;
-    height: 40%;
-    max-height: 230px;
+    height: 230px;
     box-sizing: border-box;
     padding: 5px;
     position: relative;
     border-radius: 10px;
     background-image: url(/public/img/servicioCliente.png);
     background-size: cover;
+    background-position: center;
+    margin-bottom: 10px;
+  }
+
+  .description-servicio-cliente {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  .modulos-service {
+    margin: 0;
+    padding-left: 20px;
+    list-style-type: none;
+  }
+
+  .modulos-service li {
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 15px;
+  }
+
+  .modulos-service li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #666;
   }
 
   .section-serviceCliente {
-    justify-content: center;
+    display: flex;
+    flex-direction: column;
     width: 45%;
     padding: 10px;
     border: 1px solid rgba(62, 122, 154, 0.1);
@@ -313,11 +392,13 @@
     color: #666;
     filter: drop-shadow(0px 0px 1px #666);
     box-shadow: 0px 1px 3px 3px rgba(62, 122, 154, 0.1);
+    height: fit-content;
   }
 
   h4 {
-    background: rgba(187, 186, 186, 0.056);
-    backdrop-filter: blur(10px);
+    background: white;
+    border-radius: 5px;
+    padding: 3px;
     color: #060270;
     position: absolute;
     top: 0;
@@ -332,7 +413,9 @@
     justify-content: center;
     color: #3e7a9a;
     background: white;
-    font-size: 22px;
+    font-size: 24px;
+    font-weight: 800;
+    font-style: italic;
   }
 
   .sesiones-grid {
@@ -348,6 +431,7 @@
     padding: 20px;
     border-radius: 5px;
     background: #3e7a9a;
+    font-size: 18px;
   }
 
   .coach-detail {
@@ -392,10 +476,12 @@
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+    width: 45%;
     justify-content: space-around;
     color: #3e7a9a;
     padding: 10px;
-    border: 1px solid rgba(62, 122, 154, 0.1);
+    font-size: 18px;
+    border: 1px solid #3e7a9a;
     border-radius: 10px;
   }
 
@@ -602,25 +688,31 @@
     border: 1px solid white;
   }
 
-  @media (width < 1000px) {
-    .description-formador {
-      width: 100%;
-    }
-
-    .sesiones-grid{
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-
-  @media (width < 900px) {
+  @media (width < 1200px) {
     .section-formador {
       width: 100%;
+      padding: 1.5rem;
+    }
+
+    .description-formador {
+      width: 100%;
+      min-width: auto;
     }
 
     .section-serviceCliente {
       width: 100%;
     }
 
+    .sesiones-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .div-diagnostico {
+      width: 100%;
+    }
+  }
+
+  @media (width < 900px) {
     .content {
       grid-template-columns: 1fr;
     }
@@ -644,7 +736,7 @@
       grid-template-columns: 1fr;
     }
 
-    .sesiones-grid{
+    .sesiones-grid {
       grid-template-columns: repeat(2, 1fr);
     }
 
@@ -658,6 +750,24 @@
       position: relative;
       margin-top: 30px;
       bottom: 10px;
+    }
+
+    .description-formador {
+      font-size: 1rem;
+    }
+
+    .title-formador {
+      font-size: 1.5rem;
+    }
+  }
+
+  @media (width < 500px) {
+    .description {
+      width: 100%;
+    }
+
+    .sesiones-grid {
+      grid-template-columns: 1fr;
     }
   }
 </style>
