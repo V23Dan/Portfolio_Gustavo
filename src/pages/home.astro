@@ -33,16 +33,34 @@
           extraordinarios
         </h2>
       </div>
-      <a href="https://www.linkedin.com/in/gdiaz1/" target="_blank">
-        <button class="redes">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1536 1504"
-            ><path
-              fill="currentColor"
-              d="M349 497v991H19V497zm21-306q1 73-50.5 122T184 362h-2q-82 0-132-49T0 191q0-74 51.5-122.5T186 20t133 48.5T370 191m1166 729v568h-329V958q0-105-40.5-164.5T1040 734q-63 0-105.5 34.5T871 854q-11 30-11 81v553H531q2-399 2-647t-1-296l-1-48h329v144h-2q20-32 41-56t56.5-52t87-43.5T1157 474q171 0 275 113.5T1536 920"
-            ></path></svg
-          >
-        </button>
-      </a>
+
+      <div class="section-redes">
+        <a href="https://www.linkedin.com/in/gdiaz1/" target="_blank">
+          <button class="redes">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1536 1504"
+              ><path
+                fill="currentColor"
+                d="M349 497v991H19V497zm21-306q1 73-50.5 122T184 362h-2q-82 0-132-49T0 191q0-74 51.5-122.5T186 20t133 48.5T370 191m1166 729v568h-329V958q0-105-40.5-164.5T1040 734q-63 0-105.5 34.5T871 854q-11 30-11 81v553H531q2-399 2-647t-1-296l-1-48h329v144h-2q20-32 41-56t56.5-52t87-43.5T1157 474q171 0 275 113.5T1536 920"
+              ></path></svg
+            >
+          </button>
+        </a>
+
+        <a href="https://www.youtube.com/@gustavodiaz128" target="_blank">
+          <button class="redes">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 14"
+              ><path
+                fill="currentColor"
+                d="M8 1.5c-6.88 0-7 .62-7 5.5s.12 5.5 7 5.5s7-.62 7-5.5s-.12-5.5-7-5.5m2.24 5.74L7.1 8.74c-.28.13-.5-.02-.5-.33V5.59c0-.31.23-.46.5-.33l3.14 1.5c.28.13.28.35 0 .48"
+              ></path></svg
+            >
+          </button>
+        </a>
+
+        <a href="https://www.linkedin.com/company/gustavo-diaz/?viewAsMember=true" target="_blank">
+          <button class="linkedinPage">Pag. Linkedin</button>
+        </a>
+      </div>
     </div>
   </main>
 </section>
@@ -57,6 +75,17 @@
     height: 100vh;
   }
 
+  .section-redes{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    gap: 5px;
+  }
+
   .redes {
     width: 50px;
     height: 50px;
@@ -65,14 +94,21 @@
     border-radius: 5px;
     background: white;
     color: #060270;
-    position: absolute;
-    margin-right: 20px;
-    margin-bottom: 20px;
     bottom: 0;
     right: 0;
   }
 
-  .redes:hover {
+  .linkedinPage{
+    border: 2px solid #060270;
+    height: 50px;
+    padding: 5px;
+    background: white;
+    border-radius: 15px;
+    color: #060270;
+    font-weight: 700;
+  }
+
+  .redes:hover, .linkedinPage:hover {
     background: #060270;
     color: white;
     cursor: pointer;
@@ -104,7 +140,7 @@
     position: absolute;
     background-image: conic-gradient(
       from var(--angle),
-      #3e7a9a,
+      #00a09d,
       #7901d4,
       #060270
     );
@@ -150,7 +186,7 @@
     padding: 20px 30px;
     border-radius: 12px;
     background: rgba(187, 186, 186, 0.056);
-    backdrop-filter: blur(10px); 
+    backdrop-filter: blur(10px);
     color: #000;
     height: 350px;
     font-size: 18px;
@@ -188,15 +224,21 @@
   p {
     font-size: 22px;
     font-weight: 700;
-    color: #3e7a9a;
+    color: #00a09d;
   }
 
   h2 {
-    color: #7901d4;
+    color: #4276aa;
     font-size: 32px;
   }
 
   @media (width < 1000px) {
+    .section-redes{
+      width: 100%;
+      position: relative;
+      justify-content: center;
+    }
+
     aside {
       width: 250px;
       height: 300px;
@@ -291,6 +333,10 @@
 
     .redes {
       width: 40px;
+      height: 40px;
+    }
+
+    .linkedinPage{
       height: 40px;
     }
   }

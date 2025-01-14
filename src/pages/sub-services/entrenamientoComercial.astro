@@ -23,18 +23,10 @@ export let isVisible = false;
         </div>
 
         <div class="description">
-          <ul>
-            <li>Maravilloso mundo de las ventas</li>
-            <li>El Vendedor</li>
-            <li>Automotivación</li>
-            <li>Conociendo mi empresa</li>
-            <li>Conociendo mi producto</li>
-            <li>Marca Personal</li>
-            <li>LinkedIn</li>
-            <li>Herramientas técnicas</li>
-            <li>Herramientas tecnológicas</li>
-            <li>Herramientas comerciales</li>
-          </ul>
+          <div class="graficos"></div>
+          <div class="info">
+            <p>+ 10 cursos</p>
+          </div>
         </div>
       </section>
 
@@ -45,18 +37,10 @@ export let isVisible = false;
         </div>
 
         <div class="description">
-          <ul>
-            <li>Definiendo mi cliente ideal</li>
-            <li>Planeacion comercial</li>
-            <li>Inteligencia de mercados</li>
-            <li>Segmentacion y nichos</li>
-            <li>Oferta de valor</li>
-            <li>Innovación <span>→</span> Micronichos</li>
-            <li>Métodos de prospección</li>
-            <li>Calificación de prospectos</li>
-            <li>Llamadas en frío</li>
-            <li>Visitas en frío</li>
-          </ul>
+          <div class="graficos"></div>
+          <div class="info">
+            <p>+ 10 cursos</p>
+          </div>
         </div>
       </section>
 
@@ -67,18 +51,10 @@ export let isVisible = false;
         </div>
 
         <div class="description">
-          <ul>
-            <li>Ventas consultivas</li>
-            <li>AIDA, AIDAC, AIDDCAS</li>
-            <li>Snap, Spin, Sandler</li>
-            <li>La primera reunión</li>
-            <li>Presentación exitosa</li>
-            <li>Voz, ritmo y tono</li>
-            <li>Lenguaje corporal y PNL</li>
-            <li>Preguntas de Calificación</li>
-            <li>Resortes psicológicos</li>
-            <li>Venta centrada en el cliente</li>
-          </ul>
+          <div class="graficos"></div>
+          <div class="info">
+            <p>+ 10 cursos</p>
+          </div>
         </div>
       </section>
 
@@ -87,20 +63,11 @@ export let isVisible = false;
         <div class="title">
           <h2>MODULO EXPERTO B2B</h2>
         </div>
-
         <div class="description">
-          <ul>
-            <li>Escucha Activa</li>
-            <li>Comunicación asertiva</li>
-            <li>Visión a largo plazo</li>
-            <li>Manejo de objeciones</li>
-            <li>Risk management</li>
-            <li>Vender sin vender</li>
-            <li>Gestión del cambio</li>
-            <li>Resiliencia emocional</li>
-            <li>Gestión del tiempo</li>
-            <li>Preventa y Posventa</li>
-          </ul>
+          <div class="graficos"></div>
+          <div class="info">
+            <p>+ 10 cursos</p>
+          </div>
         </div>
       </section>
     </main>
@@ -137,6 +104,21 @@ export let isVisible = false;
     align-items: center;
     position: relative;
     padding: 3px;
+  }
+
+  .description {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    font-weight: 700
+  }
+
+  .graficos {
+    width: 50px;
+    height: 50px;
+    background-image: url(/public/img/moneda.jpg);
+    background-size: cover;
+    border-radius: 10px;
   }
 
   .icon {
@@ -198,7 +180,7 @@ export let isVisible = false;
     background: white;
     color: #666;
     border: 1px solid rgba(62, 122, 154, 0.1);
-    padding: 10px 20px;
+    padding: 20px;
     border-radius: 20px;
   }
 
@@ -208,6 +190,10 @@ export let isVisible = false;
     .icon {
       background: #3e7a9a;
     }
+
+    .graficos{
+      background-image: url(/public/img/fabrica.jpg);
+    }
   }
 
   .modulo-3 {
@@ -216,6 +202,10 @@ export let isVisible = false;
     .icon {
       background: #060270;
     }
+
+    .graficos {
+      background-image: url(/public/img/manos.jpg);
+    }
   }
 
   .modulo-4 {
@@ -223,6 +213,10 @@ export let isVisible = false;
     border: 1px solid #7901d4;
     .icon {
       background: #7901d4;
+    }
+
+    .graficos{
+      background-image: url(/public/img/ganancia.jpg);
     }
   }
 

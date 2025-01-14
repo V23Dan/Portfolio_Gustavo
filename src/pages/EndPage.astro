@@ -1,0 +1,188 @@
+<section class="section-contain">
+  <div class="line line-1"></div>
+  <div class="line line-2"></div>
+  <div class="line line-3"></div>
+  <div class="line line-4"></div>
+  <div class="line line-5"></div>
+  <div class="line-growing line-growing-1"></div>
+  <div class="line-growing line-growing-2"></div>
+  <div class="bloque"></div>
+  <div class="frase">
+    <h1>EL CAMBIO QUE NECESITAS COMIENZA HOY.</h1>
+    <p>¡Contáctame y trabajemos juntos por tus resultados!</p>
+  </div>
+  <div class="line line-4"></div>
+  <div class="line line-5"></div>
+  <div class="line line-4"></div>
+  <div class="line line-5"></div>
+</section>
+
+<style>
+  .section-contain {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-color: white;
+    overflow: hidden;
+    padding: 20px;
+  }
+
+  .bloque {
+    background: #6a7fdf;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20%;
+    height: 100px;
+  }
+
+  .frase {
+    position: relative;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 48px;
+    color: #4276aa;
+    font-style: italic;
+    z-index: 1;
+  }
+
+  p {
+    font-size: 28px;
+    color: #00a09d;
+    font-weight: 700;
+    z-index: 1;
+  }
+
+  .line {
+    position: absolute;
+    background: rgba(62, 122, 154, 0.1);
+    transform-origin: center;
+    animation: zigzag 15s linear infinite;
+  }
+
+  .line-1 {
+    width: 3px;
+    height: 150px;
+    left: 0;
+    top: 0;
+    animation-delay: 0s;
+  }
+
+  .line-2 {
+    width: 2px;
+    height: 100px;
+    left: 20%;
+    top: 50%;
+    animation-delay: -3s;
+  }
+
+  .line-3 {
+    width: 4px;
+    height: 200px;
+    left: 40%;
+    top: 20%;
+    animation-delay: -6s;
+  }
+
+  .line-4 {
+    width: 1px;
+    height: 120px;
+    left: 60%;
+    top: 70%;
+    animation-delay: -9s;
+  }
+
+  .line-5 {
+    width: 5px;
+    height: 180px;
+    left: 80%;
+    top: 30%;
+    animation-delay: -12s;
+  }
+
+  @keyframes zigzag {
+    0% {
+      transform: translate(0, 0) rotate(45deg);
+    }
+    25% {
+      transform: translate(100%, -100%) rotate(45deg);
+    }
+    50% {
+      transform: translate(200%, 0) rotate(45deg);
+    }
+    75% {
+      transform: translate(100%, 100%) rotate(45deg);
+    }
+    100% {
+      transform: translate(0, 0) rotate(45deg);
+    }
+  }
+
+  .line-growing {
+    position: absolute;
+    background: rgba(62, 122, 154, 0.1);
+    animation: growAndZigzag 20s linear infinite;
+  }
+
+  .line-growing-1 {
+    left: 30%;
+    top: 40%;
+    animation-delay: -5s;
+  }
+
+  .line-growing-2 {
+    left: 70%;
+    top: 60%;
+    animation-delay: -15s;
+  }
+
+  @keyframes growAndZigzag {
+    0% {
+      width: 2px;
+      height: 50px;
+      transform: translate(0, 0) rotate(45deg);
+    }
+    25% {
+      width: 4px;
+      height: 150px;
+      transform: translate(100%, -100%) rotate(45deg);
+    }
+    50% {
+      width: 2px;
+      height: 50px;
+      transform: translate(200%, 0) rotate(45deg);
+    }
+    75% {
+      width: 4px;
+      height: 150px;
+      transform: translate(100%, 100%) rotate(45deg);
+    }
+    100% {
+      width: 2px;
+      height: 50px;
+      transform: translate(0, 0) rotate(45deg);
+    }
+  }
+
+  @media (width < 600px) {
+    h1 {
+      font-size: 32px;
+    }
+    p {
+      font-size: 22px;
+    }
+
+    .section-contain {
+      width: 80%;
+    }
+
+    .bloque {
+      height: 10%;
+    }
+  }
+</style>
